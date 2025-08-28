@@ -1,0 +1,27 @@
+{
+  "name": "api-books/restful",
+  "description": "API RESTful para gestión de libros con PHP y PostgreSQL",
+  "type": "project",
+  "require": {
+    "php": "^8.0",
+    "vlucas/phpdotenv": "^5.5",
+    "ramsey/uuid": "^4.7",
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "scripts": {
+    "start": "php -S localhost:8000 -t public",
+    "test": "php -t tests"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "prefer-stable": true,
+    "sort-packages": true
+  }
+}

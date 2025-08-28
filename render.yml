@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: books-api
+    env: php
+    buildCommand: composer install --optimize-autoloader
+    startCommand: php -S 0.0.0.0:$PORT -t public
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: DB_HOST
+        fromDatabase:
+          name: books-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: books-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: books-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: books-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: books-db
+          property: password
+
+databases:
+  - name: books-db
+    databaseName: library
+    user: postgres

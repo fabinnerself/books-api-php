@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=library
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - APP_ENV=development
+      - APP_DEBUG=true
+    depends_on:
+      - postgres
+    command: php -S 0.0.0.0:8000 -t public
+
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: library
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/create_tables.sql:/docker-entrypoint-initdb.d/01_create_tables.sql
+
+volumes:
+  postgres_data:

@@ -1,0 +1,38 @@
+# Variables de entorno
+.env
+.env.local
+.env.production
+.env-local
+
+# Dependencias de Composer
+/vendor/
+composer.lock
+
+# Logs
+/logs/
+*.log
+error.log
+
+# Cache y archivos temporales
+/cache/
+/tmp/
+.DS_Store
+Thumbs.db
+
+# IDEs
+/.vscode/
+/.idea/
+*.swp
+*.swo
+*~
+
+# Vercel
+.vercel
+.vercel.json.bak
+
+# Docker
+docker-compose.override.yml
+
+# Testing
+/tests/coverage/
+phpunit.xml
