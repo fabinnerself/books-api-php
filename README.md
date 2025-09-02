@@ -2,6 +2,10 @@
 
 Una API RESTful completa para la gestión de libros, desarrollada en PHP nativo con PostgreSQL, diseñada para ejecutarse en entornos serverless como Vercel.
 
+#🔗 Rutas Está disponible el siguiente recurso:
+
+https://books-api-php.onrender.com/
+
 ## ✨ Características
 
 - ✅ **API RESTful completa** con operaciones CRUD
